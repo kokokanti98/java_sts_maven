@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf App</title>
+    <!--Bootstrap-->
+    <div th:replace="fragments/bootstrap :: bootstrap">
+
+    </div>
+    <!--Bootstrap-->
+</head>
+<body>
+    <!--<h1 th:text = "'Thymeleaf ' +${rents}+ ' App'"></h1>-->
+    <!--Navbar-->
+    <div th:replace="fragments/navbar :: navbar">
+
+    </div>
+    <!--Navbar-->
+    <h1 th:inline="text">Bienvenue Mr(Mme) [[${#httpServletRequest.remoteUser}]]!</h1>
+</body>
+</html>
