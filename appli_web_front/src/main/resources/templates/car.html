@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Form</title>
+    <!--Bootstrap-->
+    <div th:replace="fragments/bootstrap :: bootstrap">
+
+    </div>
+    <!--Bootstrap-->
+</head>
+<body>
+<!--<h1 th:text = "'Thymeleaf ' +${rents}+ ' App'"></h1>-->
+<!--Navbar-->
+<div th:replace="fragments/navbar :: navbar">
+
+</div>
+<!--Navbar-->
+<!--Form-->
+<div th:replace="fragments/car_form :: car_form">
+
+</div>
+<!--Form-->
+<!--Affichage-->
+<table class="table table-striped table-light">
+    <thead>
+    <tr>
+        <th scope="col">Numero de Serie</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Prix(euros) par jour</th>
+        <th scope="col">Nombre Maximum de place</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "car : ${cars}">
+        <th scope="row" th:text = "${car.plateNumber}">
+
+        </th>
+        <td th:text = "${car.brand}">
+
+        </td>
+        <td th:text = "${car.price}">
+
+        </td>
+        <td th:text = "${car.numberofseats}">
+
+        </td>
+        <td>
+            <form th:action="@{'/cars/delete/{platenumber}'(platenumber=${car.plateNumber})}" th:method="delete">
+                <input type="hidden" name="_method" value="delete" />
+                <button type="submit" id="submitButton" class="btn btn-danger">Supprimer</button>
+            </form>
+            <!--<button type="button" th:id = "${user.id}" onClick="delete_user(this.id)"> Suuprimmer</button>-->
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--Affichage-->
+</body>
+</html>

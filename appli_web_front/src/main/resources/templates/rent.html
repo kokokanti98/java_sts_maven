@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent View</title>
+    <!--Bootstrap-->
+    <div th:replace="fragments/bootstrap :: bootstrap">
+
+    </div>
+    <!--Bootstrap-->
+</head>
+<body>
+<!--<h1 th:text = "'Thymeleaf ' +${rents}+ ' App'"></h1>-->
+<!--Navbar-->
+<div th:replace="fragments/navbar :: navbar">
+
+</div>
+<!--Navbar-->
+<!--Form-->
+<div th:replace="fragments/rent_form :: rent_form">
+
+</div>
+<!--Form-->
+
+<!--Affichage-->
+<table class="table table-striped table-light">
+    <thead>
+    <tr>
+        <th scope="col">ID du location</th>
+        <th scope="col">Numero de serie du voiture</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Prix(euros) par jour</th>
+        <th scope="col">ID du locateur</th>
+        <th scope="col">Nom du locateur</th>
+        <th scope="col">Date de debut de location</th>
+        <th scope="col">Date de fin de location</th>
+        <th scope="col">Prx(euros) total</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "rent : ${rents}">
+        <th scope="row" th:text = "${rent.id}">
+
+        </th>
+        <td th:text = "${rent.platenumber}">
+
+        </td>
+        <td th:text = "${rent.brand}">
+
+        </td>
+        <td th:text = "${rent.price}">
+
+        </td>
+        <td th:text = "${rent.id_personne}">
+
+        </td>
+        <td th:text = "${rent.name}">
+
+        </td>
+        <td th:text = "${rent.beginRent}">
+
+        </td>
+        <td th:text = "${rent.endRent}">
+
+        </td>
+        <td th:text = "${rent.totalRent}">
+
+        </td>
+        <td>
+            <form th:action="@{'/rents/delete/{id}'(id=${rent.id})}" th:method="delete">
+                <input type="hidden" name="_method" value="delete" />
+                <button type="submit" id="submitButton" class="btn btn-danger">Supprimer</button>
+            </form>
+            <!--<button type="button" th:id = "${user.id}" onClick="delete_user(this.id)"> Suuprimmer</button>-->
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--Affichage-->
+</body>
+</html>

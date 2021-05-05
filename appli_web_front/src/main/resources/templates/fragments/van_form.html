@@ -1,0 +1,21 @@
+<div th:fragment="van_form" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form action="#" th:action="@{/vans}" th:object="${van}" method="post">
+        <div class="form-group">
+            <label for="platenumber">Numero de serie</label>
+            <input type="text" class="form-control" id="platenumber" aria-describedby="emailHelp" placeholder="Enter platenumber" th:field="*{plateNumber}">
+        </div>
+        <div class="form-group">
+            <label for="name1">Marque</label>
+            <input type="text" class="form-control" id="name1" placeholder="name" th:field="*{brand}">
+        </div>
+        <div class="form-group">
+            <label for="price">Prix(euros) par jour</label>
+            <input type="number" class="form-control" id="price" placeholder="Le prix en euros" th:field="*{price}">
+        </div>
+        <div class="form-group">
+            <label for="maxweight">Poids Maximum(kg)</label>
+            <input type="number" step="0.01" class="form-control" id="maxweight" placeholder="Le poids maximum" th:field="*{maxweight}">
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
