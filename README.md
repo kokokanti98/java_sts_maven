@@ -1,2 +1,4 @@
 # java_sts_maven
-Maven build of java_sts
+Maven build of java_ SPring Boot Tool Suite
+
+
