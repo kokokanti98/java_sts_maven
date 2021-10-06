@@ -1,4 +1,4 @@
-# java_sts_Maven
+# java_sts_Maven build
 ## Maven build of java spring boot tool suite(sts)
 # Site web en Java
 ## Fait en Java Spring Boot
