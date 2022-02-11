@@ -1,0 +1,25 @@
+<div th:fragment="rent_form" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form action="#" th:action="@{/rents}" th:object="${rent}" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">ID</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter id" th:field="*{id}">
+        </div>
+        <div class="form-group">
+            <label for="id_beginRent">Debut de Location</label>
+            <input type="date" class="form-control" id="id_beginRent" placeholder="Date de debut de location" th:field="*{beginRent}">
+        </div>
+        <div class="form-group">
+            <label for="endRent">Fin de Location</label>
+            <input type="date" class="form-control" id="endRent" placeholder="Date de fin de location" th:field="*{endRent}">
+        </div>
+        <div class="form-group">
+            <label for="id_locateur">ID de celui qui fait la location</label>
+            <input type="number" class="form-control" id="id_locateur" aria-describedby="emailHelp" placeholder="Entre id du locateur" th:field="*{person.id}">
+        </div>
+        <div class="form-group">
+            <label for="id_car">Numero de serie</label>
+            <input type="text" class="form-control" id="id_car" aria-describedby="emailHelp" placeholder="Entre num serie du voiture" th:field="*{vehicule.plateNumber}">
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
